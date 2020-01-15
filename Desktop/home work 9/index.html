@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>home-work 9 </title>
+</head>
+<body>
+	<script>
+		console.log('//Задание 2')
+
+
+		// создание замыкания 
+
+		function sum() {
+			//console.log(arguments)
+			
+			let summery = 0;
+
+			return function(num){
+				//console.log(arguments);
+
+				return summery += num  ;
+			}; 
+		}
+		// переменная для вызова замыкания 
+
+		let summery = sum();// тут параметр для функции sum
+
+		// вызов функции 
+
+		console.log(summery(42));// тут для  num 
+		console.log(summery(42));
+		console.log(summery(42));
+
+
+		console.log('//Задание 2')
+
+		function counter(start,step) {
+
+			let count = start;
+			
+			return function(reset) {
+
+				if(reset === 42 ) {
+
+					return count = start; 
+
+				} else { 
+
+					return count += step;
+				};
+			};
+		};
+		// передаем пареметр  старт и шаг  
+		const insta = counter(5,.042);
+
+		console.log(insta());
+		console.log(insta());
+		console.log(insta());
+		// передаем аргумент во внутреннюю функцию при котором сброс 
+		insta(42) 
+		console.log(insta());
+		
+	
+
+
+
+
+		</script>
+</body>
+</html>
